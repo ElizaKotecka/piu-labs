@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
 }
 
 #darkToggle {
@@ -17,6 +17,7 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   font-size: 16px;
+  color: #333;
 }
 
 .form-container {
@@ -28,6 +29,7 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   margin-top: 20px;
+  color: #333;
 }
 
 .form-header {
@@ -76,6 +78,8 @@ select {
   border: 1px solid #888;
   box-sizing: border-box;
   font-size: 16px;
+  background-color: #fff;
+  color: #333;
 }
 
 .color-input {
@@ -84,6 +88,7 @@ select {
   padding: 0;
   border: 1px solid #888;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .fieldset-radio {
@@ -216,4 +221,18 @@ select {
   input[type='checkbox'] {
   border: 2px solid #e0e0e0;
   background-color: #fff;
+}
+
+.theme-icon .icon-sun {
+  display: block;
+}
+.theme-icon .icon-moon {
+  display: none;
+}
+
+.page:has(#darkToggle:checked) .theme-icon .icon-sun {
+  display: none;
+}
+.page:has(#darkToggle:checked) .theme-icon .icon-moon {
+  display: block;
 }
