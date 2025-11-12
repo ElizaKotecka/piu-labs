@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uwagi o Formularzach HTML</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Formularze HTML</h1>
+      <p>Krótka analiza</p>
+    </header>
+
+    <div class="container">
+      <section>
+        <h2>Wady i ograniczenia</h2>
+        <article>
+          <p>
+            Formularze bez JavaScript są niezmienne i statyczne. Wszelka
+            walidacja musi odbywać się po stronie serwera, co oznacza opóźnienia
+            i konieczność przeładowania strony po każdej poprawce błędu.
+            Ograniczona jest też możliwość zaawansowanej logiki (np. dynamiczne
+            ukrywanie pól).
+          </p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Kiedy warto stosować</h2>
+        <article>
+          <ul>
+            <li>
+              <strong>Proste działania:</strong> Formularze rejestracji lub
+              kontaktowe.
+            </li>
+            <li>
+              <strong>Dostępność:</strong> Zapewnienie działania w każdej
+              przeglądarce i przy wyłączonym JS.
+            </li>
+            <li>
+              <strong>Bezpieczeństwo:</strong> Używanie jako bezpieczny szkielet
+              dla krytycznych danych (np. logowanie).
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section>
+        <h2>Kiedy unikać</h2>
+        <article>
+          <ol>
+            <li>
+              <strong>Złożona walidacja:</strong> Weryfikacja danych w czasie
+              rzeczywistym.
+            </li>
+            <li>
+              <strong>Dynamiczny interfejs:</strong> Dodawanie/usuwanie pól,
+              formularze wieloetapowe.
+            </li>
+          </ol>
+        </article>
+      </section>
+    </div>
+    <footer>
+      <p>
+        <a href="index.html">Powrót do strony głównej</a>
+      </p>
+    </footer>
+  </body>
+</html>
