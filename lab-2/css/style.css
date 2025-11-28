@@ -9,11 +9,42 @@ body {
   padding: 0;
 }
 
-a {
-  color: #0066cc; /* niebieski kolor linków */
-  text-decoration: none; /* bez podkreślenia */
-  font-size: 1.4rem;
+h1 {
+  text-align: center;
 }
+
+.container {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 6px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+
+  a {
+    font-size: 18px;
+    color: #ecedee;
+    text-decoration: none;
+    background-color: rgb(114, 168, 28);
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+  a:hover {
+    text-decoration: none;
+    background-color: rgb(92, 136, 21);
+  }
+}
+
+a {
+  color: #555555;
+  text-decoration: none;
+}
+
 a:hover {
-  text-decoration: underline; /* podkreślenie przy najechaniu */
+  text-decoration: underline;
 }
