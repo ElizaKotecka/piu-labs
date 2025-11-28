@@ -1,0 +1,178 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+}
+
+.theme-picker {
+  border: 2px solid #e08e28;
+  background-color: #fcf6e3;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.container {
+  border: 2px solid #e08e28;
+  background-color: #fcf6e3;
+  border-radius: 10px;
+  padding: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.item {
+  background-color: blue;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  /* cyfra wewnątrz kafelka */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 60%;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    justify-content: space-between;
+  }
+  .item {
+    width: 30%;
+  }
+}
+
+/* WARIANT CZERWONY */
+
+body:has(input[value='red']:checked) .container {
+  /* poniżej 1024px */
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+  }
+}
+
+body:has(input[value='red']:checked) .item {
+  background-color: red;
+  width: 45%;
+
+  /* zamiast body:has(...) .item */
+  &:nth-child(2) {
+    font-weight: normal;
+    order: 1;
+  }
+  &:nth-child(3) {
+    font-weight: normal;
+    order: 2;
+  }
+  &:nth-child(1) {
+    order: 3;
+  }
+  &:nth-child(4) {
+    font-weight: normal;
+    order: 4;
+  }
+  &:nth-child(5) {
+    font-weight: normal;
+    order: 5;
+  }
+
+  &:nth-child(1) {
+    /* 2x45% (szerokśc kafelka) + 20px gap */
+    width: calc(90% + 20px);
+    font-weight: bold;
+    flex-direction: column;
+
+    &::after {
+      content: '(Jestem większy i na środku!)';
+      display: block;
+      font-size: 80%;
+      font-weight: normal;
+      margin-top: 5px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    width: 15%;
+
+    &:nth-child(1) {
+      width: 30%;
+    }
+  }
+}
+
+/* WARIANT ZIELONY */
+
+body:has(input[value='green']:checked) .container {
+  /* poniżej 1024px */
+  flex-direction: column-reverse;
+  align-items: flex-end;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+}
+
+body:has(input[value='green']:checked) .item {
+  background-color: green;
+
+  &:nth-child(5) {
+    width: 20%;
+  }
+  &:nth-child(4) {
+    width: 40%;
+  }
+  &:nth-child(3) {
+    width: 60%;
+  }
+  &:nth-child(2) {
+    width: 80%;
+  }
+
+  &:nth-child(1) {
+    width: 100%;
+
+    /* rozsunięcie emotki na boki */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::before,
+    &::after {
+      content: '😀';
+      font-size: 200%;
+      line-height: 0; /* nie zmienia wysokości bloku */
+    }
+  }
+
+  @media (min-width: 1024px) {
+    /* gap to 20px, mamy 4 gapy i 5 kafelków (80 px : 5 = 16px ) */
+    &:nth-child(1) {
+      width: calc(30% - 16px);
+    }
+    &:nth-child(2) {
+      width: calc(25% - 16px);
+    }
+    &:nth-child(3) {
+      width: calc(20% - 16px);
+    }
+    &:nth-child(4) {
+      width: calc(15% - 16px);
+    }
+    &:nth-child(5) {
+      width: calc(10% - 16px);
+    }
+  }
+}
