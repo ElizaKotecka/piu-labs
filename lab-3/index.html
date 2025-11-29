@@ -3,10 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/polo.css" />
   </head>
   <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
+    <input type="radio" name="color" id="blue" class="color-control" checked />
+    <input type="radio" name="color" id="red" class="color-control" />
+    <input type="radio" name="color" id="green" class="color-control" />
+    <input type="radio" name="color" id="yellow" class="color-control" />
+
+    <input type="radio" name="size" id="size-s" class="size-control" />
+    <input type="radio" name="size" id="size-m" class="size-control" checked />
+    <input type="radio" name="size" id="size-l" class="size-control" />
+    <input type="radio" name="size" id="size-xl" class="size-control" />
+
+    <div class="main-wrapper">
+      <div class="product-card">
+        <div class="image-box">
+          <div class="image-placeholder"></div>
+        </div>
+
+        <div class="details-box">
+          <div class="header-row">
+            <h1>Koszulka Polo</h1>
+            <span class="badge">Promocja!</span>
+          </div>
+
+          <p class="description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+            quis adipisci maiores.
+          </p>
+
+          <div class="option-group">
+            <span class="option-label">Kolor</span>
+            <div class="color-options">
+              <label
+                for="blue"
+                class="color-circle"
+                style="--bg: #1c5298"
+              ></label>
+              <label
+                for="red"
+                class="color-circle"
+                style="--bg: #d63031"
+              ></label>
+              <label
+                for="green"
+                class="color-circle"
+                style="--bg: #2ba347"
+              ></label>
+              <label
+                for="yellow"
+                class="color-circle"
+                style="--bg: #feca57"
+              ></label>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <span class="option-label">Rozmiar</span>
+            <div class="size-options">
+              <label for="size-s" class="size-box">S</label>
+              <label for="size-m" class="size-box">M</label>
+              <label for="size-l" class="size-box">L</label>
+              <label for="size-xl" class="size-box">XL</label>
+            </div>
+          </div>
+
+          <div class="price">59,99 zł</div>
+
+          <button class="add-to-cart">
+            <span class="icon">🛒</span> Do koszyka
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
