@@ -1,0 +1,143 @@
+/* Reset stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e2e2e2;
+}
+main,
+aside {
+  h1,
+  h2,
+  h3,
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'aside'
+    'footer';
+
+  /* ograniczenie szerokości */
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+header {
+  grid-area: header;
+  background-color: #f39c12;
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .logo {
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &::before {
+      content: 'Logo ';
+      margin-right: 5px;
+      color: #000;
+    }
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+}
+
+nav {
+  grid-area: nav;
+  background-color: #2980b9;
+  padding: 0.6rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+main {
+  grid-area: main;
+  background-color: #fff;
+  padding: 2rem;
+}
+
+aside {
+  grid-area: aside;
+  background-color: #dbece4;
+  padding: 2rem;
+
+  div {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 3rem;
+  }
+}
+
+footer {
+  grid-area: footer;
+  background-color: #27ae60;
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 3fr 1fr; /* treść szersza, panel węższy */
+    grid-template-areas:
+      'header header'
+      'nav nav'
+      'main aside'
+      'footer footer';
+  }
+
+  nav {
+    justify-content: flex-start;
+  }
+
+  /* układ ikon w panelu bocznym 2-kolumnowy */
+  aside div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+}
