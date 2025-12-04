@@ -2,11 +2,54 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <title>Lab 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4 - Kanban</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
+    <div class="header-container">
+      <h1>Kanban Board</h1>
+      <a href=".." class="back-link">Powrót</a>
+    </div>
+
+    <div id="board" class="board">
+      <div class="column" id="col-todo" data-column="todo">
+        <header>
+          <h2>Do zrobienia (<span class="count">0</span>)</h2>
+          <div class="col-actions">
+            <button class="btn-add">Dodaj kartę</button>
+            <button class="btn-color">Koloruj kolumnę</button>
+            <button class="btn-sort">Sortuj</button>
+          </div>
+        </header>
+        <div class="card-list"></div>
+      </div>
+
+      <div class="column" id="col-inprogress" data-column="inprogress">
+        <header>
+          <h2>W trakcie (<span class="count">0</span>)</h2>
+          <div class="col-actions">
+            <button class="btn-add">Dodaj kartę</button>
+            <button class="btn-color">Koloruj kolumnę</button>
+            <button class="btn-sort">Sortuj</button>
+          </div>
+        </header>
+        <div class="card-list"></div>
+      </div>
+
+      <div class="column" id="col-done" data-column="done">
+        <header>
+          <h2>Zrobione (<span class="count">0</span>)</h2>
+          <div class="col-actions">
+            <button class="btn-add">Dodaj kartę</button>
+            <button class="btn-color">Koloruj kolumnę</button>
+            <button class="btn-sort">Sortuj</button>
+          </div>
+        </header>
+        <div class="card-list"></div>
+      </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
   </body>
 </html>
